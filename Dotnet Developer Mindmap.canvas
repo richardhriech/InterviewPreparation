@@ -105,7 +105,9 @@
 		{"id":"215159d9e3f6af05","type":"text","text":"Deploy Independently","x":2420,"y":4452,"width":320,"height":62},
 		{"id":"74126156a9090a6f","type":"text","text":"Isolate Failure","x":2420,"y":4535,"width":320,"height":62},
 		{"id":"d8b07796e8996972","type":"text","text":"Highly Observable","x":2420,"y":4617,"width":320,"height":62},
-		{"id":"e089084e8db63027","type":"file","file":"InterviewPreparation/SOA vs Microservices.md","x":1680,"y":3520,"width":620,"height":480}
+		{"id":"e089084e8db63027","type":"file","file":"InterviewPreparation/SOA vs Microservices.md","x":1680,"y":3520,"width":620,"height":480},
+		{"id":"6530595467a73656","x":2400,"y":3630,"width":250,"height":130,"type":"text","text":"SOA: standardizing the way web services work in an organization through middlewares"},
+		{"id":"d8c97d5c6edaf24e","x":2400,"y":3780,"width":250,"height":90,"type":"text","text":"Microservices are more of an application specific platform"}
 	],
 	"edges":[
 		{"id":"0f6cadb9bd921876","fromNode":"030c0eb0736aebff","fromSide":"bottom","toNode":"017690d2700faaa5","toSide":"top"},
@@ -207,6 +209,8 @@
 		{"id":"c2411d5b24788e4b","fromNode":"030c0eb0736aebff","fromSide":"bottom","toNode":"dd9216dd9398651a","toSide":"right"},
 		{"id":"79b550ab3d0ac864","fromNode":"dd9216dd9398651a","fromSide":"left","toNode":"186ff926e2d0646b","toSide":"right"},
 		{"id":"5d672318f91595ce","fromNode":"02b24df26d94c605","fromSide":"right","toNode":"02502d2bf099c741","toSide":"left"},
-		{"id":"6df702299fb13e6a","fromNode":"ddceea296867a3a5","fromSide":"right","toNode":"e089084e8db63027","toSide":"left"}
+		{"id":"6df702299fb13e6a","fromNode":"ddceea296867a3a5","fromSide":"right","toNode":"e089084e8db63027","toSide":"left"},
+		{"id":"624d294e0138032e","fromNode":"e089084e8db63027","fromSide":"right","toNode":"6530595467a73656","toSide":"left"},
+		{"id":"5aae44fd4866a24d","fromNode":"e089084e8db63027","fromSide":"right","toNode":"d8c97d5c6edaf24e","toSide":"left"}
 	]
 }
