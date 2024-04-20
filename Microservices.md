@@ -1,0 +1,6 @@
+- Software architectural style
+- set of small, independent services that communicate with each other through **APIs**
+- they can be built using different technologies and **deployed, scaled**, updated independently
+- they have their own independent **databases**
+- ![[Microservice Using ASP.webp]]
+- 
