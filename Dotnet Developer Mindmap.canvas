@@ -93,8 +93,8 @@
 		{"id":"a440f74d4ea01327","type":"text","text":"Client-Server Communication","x":-1626,"y":741,"width":250,"height":60},
 		{"id":"7267bafeb959c241","type":"text","text":"SOLID Principles","x":-1120,"y":240,"width":250,"height":60,"color":"6"},
 		{"id":"21b0fccf33c9635c","type":"text","text":"Communication","x":-1120,"y":472,"width":250,"height":60,"color":"6"},
-		{"id":"02b24df26d94c605","type":"file","file":"Interview preparation/Microservices.md","x":1720,"y":3480,"width":520,"height":420},
-		{"id":"74bdb6fd45fc0c8a","x":1720,"y":3189,"width":400,"height":231,"type":"file","file":"Interview preparation/Pasted image 20240420184518.png"}
+		{"id":"02b24df26d94c605","type":"file","file":"InterviewPreparation/Microservices.md","x":1720,"y":3480,"width":520,"height":420},
+		{"id":"74bdb6fd45fc0c8a","type":"file","file":"InterviewPreparation/Pasted image 20240420184518.png","x":1720,"y":3189,"width":400,"height":231}
 	],
 	"edges":[
 		{"id":"0f6cadb9bd921876","fromNode":"030c0eb0736aebff","fromSide":"bottom","toNode":"017690d2700faaa5","toSide":"top"},
