@@ -233,8 +233,7 @@ Could be useful when you want to control access to a shared resource.
 - mocking can be difficult
 
 ### Structure
-
-![[../Media/Pasted image 20240421194516.png]]
+![](../Media/Pasted%20image%2020240421194516.png)
 ```CSharp
 public sealed class President
 {
