@@ -2,13 +2,13 @@ Creational patterns are focused towards how to ***instantiate*** an object or gr
 
 [Comparison of different factories](https://refactoring.guru/design-patterns/factory-comparison)
 
-- [[#Simple Factory|Simple Factory]]
-- [[#Factory Method|Factory Method]]
-- [[#Abstract Factory|Abstract Factory]]
-- [[#Builder|Builder]]
-- [[#Prototype|Prototype]]
-- [[#Singleton|Singleton]]
-- [[#Also mentioning:|Also mentioning:]]
+- [Simple Factory](#Simple%20Factory)
+- [Factory Method](#Factory%20Method)
+- [Abstract Factory](#Abstract%20Factory)
+- [Builder](#Builder)
+- [Prototype](#Prototype)
+- [Singleton](#Singleton)
+- [Also mentioning](#Also%20mentioning)
 
 ## Simple Factory
 

@@ -7,8 +7,8 @@ Design patterns are solutions to recurring problems; guidelines on how to tackle
 
 There are three types of design patterns:
 
-[[Creational Patterns]]
+[Creational Patterns](Creational%20Patterns.md)
 
-[[Behavioral Patterns]]
+[Structural Patterns](Structural%20Patterns.md)
 
-[[Structural Patterns]]
+[Behavioral Patterns](Behavioral%20Patterns.md)
