@@ -189,6 +189,7 @@ https://refactoring.guru/design-patterns/builder
 Builder lets you construct complex objects step by step. The pattern allows you to produce different types and representations of an object using the same construction code.
 
 ### The problem
+In some cases you might want to avoid creating a subclass for variations of the same class, but that can result in complicated, long constructors.
 ![[Pasted image 20240421180716.png]]
 ### The Solution
 
@@ -215,8 +216,53 @@ The class should implement a ***Prototype*** interface, containing a ***Clone***
 
 Implementation details: https://refactoring.guru/design-patterns/prototype
 
+### Cons
+Cloning complex objects that have circular references might be very tricky.
 ## Singleton
+https://refactoring.guru/design-patterns/singleton
+The pattern ensures that only one instance of a particular class is ever created.
 
+Could be useful when you want to control access to a shared resource.
+### Requirements
+1. Ensure that the class can have only one instance.
+1. Provide a global access point to the instance from anywhere in the program. It also protects it from being overwritten.
+### Cons
+- creates a global state of your app: a change in one place can affect another part of the application
+	- bugs introduced by this are hard to find
+- makes your code tightly coupled
+- mocking can be difficult
+
+### Structure
+
+![[Pasted image 20240421194516.png]]
+```CSharp
+public sealed class President
+{
+    private static readonly President instance = new President();
+    private static readonly object padlock = new object();
+    
+    // Private constructor ensures that an object is not instantiated from outside the class
+    private President()
+    {
+    }
+
+    public static President Instance
+    {
+        get
+        {
+            lock (padlock)
+            {
+                return instance;
+            }
+        }
+    }
+}
+```
+
+1. **Sealed Class**: The `sealed` keyword prevents the class from being inherited.
+2. **Static Initialization**: The Singleton instance is created using a static initializer. This ensures thread safety and lazy initialization by default due to .NET's handling of static constructors.
+3. **Thread Safety**: The use of a lock (`padlock`) ensures that the instance is thread-safe and handles multi-threaded scenarios safely. However, in this particular case since the instance is already initialized statically, the lock is not necessarily required for instance creation but might be useful if later modification or operations need to be thread-safe.
+4. **No Need for Clone or Deserialize Prevention**: Unlike PHP, in C#, if you do not provide cloning (ICloneable interface) or serialization capabilities, the class won't be cloneable or serializable.
 ## Also mentioning:
 ### Creation method / Factory method
 The creation method is just a wrapper around a constructor call.
