@@ -71,7 +71,6 @@ public class AccountingDepartment : Department
 
 ```
 ### When to use?
-
 Useful when there is some generic processing in a class but the required sub-class is dynamically decided at runtime. Or putting it in other words, when the client doesn’t know what exact sub-class it might need.
 ## Abstract Factory
 A factory of factories; a factory that groups the individual but related/dependent factories together without specifying their concrete classes.
@@ -186,9 +185,36 @@ door.GetDescription();  // Output: I am an iron door
 expert.GetDescription(); // Output: I can only fit iron doors
 ```
 ## Builder
+https://refactoring.guru/design-patterns/builder
 Builder lets you construct complex objects step by step. The pattern allows you to produce different types and representations of an object using the same construction code.
+
+### The problem
 ![[Pasted image 20240421180716.png]]
+### The Solution
+
+![[Pasted image 20240421184959.png]]
+The Builder pattern lets you construct complex objects ***step by step***. The Builder doesn’t allow other objects to access the product while it’s being built.
+
+Some of the steps might need different implementations when you need various versions of the product. In this case you can create several different builder classes, implementing the same set of steps.
+
+You can extract the series of step calls into a separate ***Director*** class that defines the order in which to call the steps.
+
+![[Pasted image 20240421185836.png]]
+### When to use?
+
+When there could be several flavors of an object and to avoid the constructor telescoping. The key difference from the factory pattern is that; factory pattern is to be used when the creation is a one step process while builder pattern is to be used when the creation is a multi step process.
+
 ## Prototype
+Create an object based on an existing object through cloning.
+
+### Problem 
+You might want to create an exact copy of an instance. In regular copying some of the objects' properties may be private, so the copied object might behave differently.
+
+### Solution
+The class should implement a ***Prototype*** interface, containing a ***Clone*** method (or a constructor that accepts a parameter from the same class). This method now has access to private fields and other implementation details "from the inside", so it can create a required copy of the original instance.
+
+Implementation details: https://refactoring.guru/design-patterns/prototype
+
 ## Singleton
 
 ## Also mentioning:
