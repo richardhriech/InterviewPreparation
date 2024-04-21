@@ -3,7 +3,7 @@
 - monolithic applications are ineffective - scaling such applications is expensive since we have to scale the whole even though only a particular service gets a lot of traffic
 - microservices can be built using different technologies and ***deployed, scaled***, updated independently
 - they have their own independent ***databases***
-- ![[Microservice Using ASP.webp]]
+![](../Media/Microservice%20Using%20ASP.webp)
 - dockerized microservice: https://www.c-sharpcorner.com/article/microservice-using-asp-net-core/
 
 ## Principles of Microservices

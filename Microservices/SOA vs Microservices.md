@@ -1,4 +1,4 @@
-![[Pasted image 20240420194738.png]]
+![](../Media/Pasted%20image%2020240420194738.png)
 
 ***Service-Oriented Architecture (SOA)*** follows a coarse-grained structure where the features of an application are broken down into smaller components as services comprised of some tasks. This type of architecture allowed us to horizontally scale each service, and also more flexibility and performance at the cost of increasing the complexity of the architecture compared to the monolithic. Each service ***can be written in different languages*** and the ***communication*** between them can be done with the help of a ***middleware***
 

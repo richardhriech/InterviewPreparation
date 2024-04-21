@@ -8,6 +8,8 @@ Creational patterns are focused towards how to ***instantiate*** an object or gr
 - [[#Builder|Builder]]
 - [[#Prototype|Prototype]]
 - [[#Singleton|Singleton]]
+- [[#Also mentioning:|Also mentioning:]]
+
 ## Simple Factory
 
 Simple factory simply ***generates an instance*** for client ***without exposing*** any instantiation ***logic*** to the client.
@@ -190,17 +192,18 @@ Builder lets you construct complex objects step by step. The pattern allows you
 
 ### The problem
 In some cases you might want to avoid creating a subclass for variations of the same class, but that can result in complicated, long constructors.
-![[Pasted image 20240421180716.png]]
-### The Solution
+![](../Media/Pasted%20image%2020240421180716.png)
+ ![](../Media/Pasted%20image%2020240421184959.png)
 
-![[Pasted image 20240421184959.png]]
+
+### The Solution
 The Builder pattern lets you construct complex objects ***step by step***. The Builder doesn’t allow other objects to access the product while it’s being built.
 
 Some of the steps might need different implementations when you need various versions of the product. In this case you can create several different builder classes, implementing the same set of steps.
 
 You can extract the series of step calls into a separate ***Director*** class that defines the order in which to call the steps.
 
-![[Pasted image 20240421185836.png]]
+![](../Media/Pasted%20image%2020240421185836.png)
 ### When to use?
 
 When there could be several flavors of an object and to avoid the constructor telescoping. The key difference from the factory pattern is that; factory pattern is to be used when the creation is a one step process while builder pattern is to be used when the creation is a multi step process.
