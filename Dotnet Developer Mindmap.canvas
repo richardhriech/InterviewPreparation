@@ -92,7 +92,7 @@
 		{"id":"d8b07796e8996972","type":"text","text":"Highly Observable","x":2640,"y":5577,"width":320,"height":62},
 		{"id":"ce44d0ad4789763f","type":"text","text":"Model-View-Presenter","x":1900,"y":5795,"width":250,"height":60},
 		{"id":"4bf0a0bc7ea17267","type":"text","text":"Model-View-Controller","x":1900,"y":5870,"width":250,"height":60},
-		{"id":"a29f8809ee950d2d","type":"file","file":"InterviewPreparation/DesignPatterns/Creational Patterns.md","x":1900,"y":2302,"width":640,"height":400},
+		{"id":"a29f8809ee950d2d","type":"file","file":"DesignPatterns/Creational Patterns.md","x":1900,"y":2302,"width":640,"height":400},
 		{"id":"ba4331364999ec4a","type":"file","file":"InterviewPreparation/DesignPatterns/Structural Patterns.md","x":1900,"y":2752,"width":640,"height":400},
 		{"id":"1b19470e6b9816bb","type":"file","file":"InterviewPreparation/DesignPatterns/Behavioral Patterns.md","x":1900,"y":3188,"width":640,"height":400},
 		{"id":"2b4e0ffd010aaa10","type":"text","text":"Logging","x":-1120,"y":5440,"width":250,"height":60,"color":"6"},
