@@ -76,8 +76,115 @@ Useful when there is some generic processing in a class but the required sub-cla
 ## Abstract Factory
 A factory of factories; a factory that groups the individual but related/dependent factories together without specifying their concrete classes.
 
+### Example
+#### Interfaces
 
+```Csharp
+// Interface for Door
+public interface IDoor
+{
+    void GetDescription();
+}
 
+// Interface for DoorFittingExpert
+public interface IDoorFittingExpert
+{
+    void GetDescription();
+}
+
+// Interface for DoorFactory
+public interface IDoorFactory
+{
+    IDoor MakeDoor();
+    IDoorFittingExpert MakeFittingExpert();
+}
+```
+#### Concrete classes
+
+```CSharp
+// WoodenDoor implements IDoor
+public class WoodenDoor : IDoor
+{
+    public void GetDescription()
+    {
+        Console.WriteLine("I am a wooden door");
+    }
+}
+
+// IronDoor implements IDoor
+public class IronDoor : IDoor
+{
+    public void GetDescription()
+    {
+        Console.WriteLine("I am an iron door");
+    }
+}
+
+// Welder implements IDoorFittingExpert
+public class Welder : IDoorFittingExpert
+{
+    public void GetDescription()
+    {
+        Console.WriteLine("I can only fit iron doors");
+    }
+}
+
+// Carpenter implements IDoorFittingExpert
+public class Carpenter : IDoorFittingExpert
+{
+    public void GetDescription()
+    {
+        Console.WriteLine("I can only fit wooden doors");
+    }
+}
+
+// WoodenDoorFactory implements IDoorFactory
+public class WoodenDoorFactory : IDoorFactory
+{
+    public IDoor MakeDoor()
+    {
+        return new WoodenDoor();
+    }
+
+    public IDoorFittingExpert MakeFittingExpert()
+    {
+        return new Carpenter();
+    }
+}
+
+// IronDoorFactory implements IDoorFactory
+public class IronDoorFactory : IDoorFactory
+{
+    public IDoor MakeDoor()
+    {
+        return new IronDoor();
+    }
+
+    public IDoorFittingExpert MakeFittingExpert()
+    {
+        return new Welder();
+    }
+}
+```
+#### Usage
+
+```CSharp
+// Using the Wooden Door Factory
+IDoorFactory woodenFactory = new WoodenDoorFactory();
+IDoor door = woodenFactory.MakeDoor();
+IDoorFittingExpert expert = woodenFactory.MakeFittingExpert();
+
+door.GetDescription();  // Output: I am a wooden door
+expert.GetDescription(); // Output: I can only fit wooden doors
+
+// Using the Iron Door Factory
+IDoorFactory ironFactory = new IronDoorFactory();
+door = ironFactory.MakeDoor();
+expert = ironFactory.MakeFittingExpert();
+
+door.GetDescription();  // Output: I am an iron door
+expert.GetDescription(); // Output: I can only fit iron doors
+```
 ## Builder
 ## Prototype
 ## Singleton
