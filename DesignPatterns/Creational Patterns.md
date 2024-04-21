@@ -234,7 +234,7 @@ Could be useful when you want to control access to a shared resource.
 
 ### Structure
 
-![[Pasted image 20240421194516.png]]
+![[../Media/Pasted image 20240421194516.png]]
 ```CSharp
 public sealed class President
 {
