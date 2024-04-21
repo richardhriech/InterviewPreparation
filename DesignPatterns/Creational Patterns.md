@@ -186,6 +186,8 @@ door.GetDescription();  // Output: I am an iron door
 expert.GetDescription(); // Output: I can only fit iron doors
 ```
 ## Builder
+Builder lets you construct complex objects step by step. The pattern allows you to produce different types and representations of an object using the same construction code.
+![[Pasted image 20240421180716.png]]
 ## Prototype
 ## Singleton
 
