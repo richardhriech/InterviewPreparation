@@ -265,6 +265,6 @@ public sealed class President
 2. **Static Initialization**: The Singleton instance is created using a static initializer. This ensures thread safety and lazy initialization by default due to .NET's handling of static constructors.
 3. **Thread Safety**: The use of a lock (`padlock`) ensures that the instance is thread-safe and handles multi-threaded scenarios safely. However, in this particular case since the instance is already initialized statically, the lock is not necessarily required for instance creation but might be useful if later modification or operations need to be thread-safe.
 4. **No Need for Clone or Deserialize Prevention**: Unlike PHP, in C#, if you do not provide cloning (ICloneable interface) or serialization capabilities, the class won't be cloneable or serializable.
-## Also mentioning:
+## Also mentioning
 ### Creation method / Factory method
 The creation method is just a wrapper around a constructor call.
