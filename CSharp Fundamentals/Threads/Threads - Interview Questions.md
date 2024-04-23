@@ -1,0 +1,2 @@
+### Explain how `async` and `await` work in C#.
+- **Answer**: `async` and `await` keywords are used to define asynchronous methods in C#. `async` marks a method that can perform asynchronous operations and may contain `await` expressions. `await` is applied to an asynchronous operation, yielding control to the caller until the awaited task completes.
