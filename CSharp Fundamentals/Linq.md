@@ -7,6 +7,12 @@ LINQ to Objects, LINQ to SQL and LINQ to XML.
 ### What is the role of the `IEnumerable` interface?
 `IEnumerable` is crucial in LINQ as it provides the foundation for iterating over a collection that LINQ queries against. Every query returns an `IEnumerable` or `IQueryable`, allowing further querying and collection manipulation.
 
+### What is `IQueryable` and how does it differ from `IEnumerable`?
+`IQueryable` is an interface designed to allow querying against a specific data source where the query is not executed until the object is enumerated. This is different from `IEnumerable`, which is intended for querying in-memory collections. The main difference is that `IQueryable` allows for out-of-memory, deferred execution and translates queries into domain-specific language (e.g., SQL for databases), while `IEnumerable` operations are performed in memory and executed immediately.
+
+### When to use `IQueryable` over `IEnumerable`?
+Use `IQueryable` when querying data sources that support query translation, such as relational databases or other structured data sources that benefit from server-side execution (e.g., SQL Server, MongoDB). This can reduce the amount of data transferred over the network and utilize the database server's query optimization. Use `IEnumerable` for small collections or when working with data already loaded into memory.
+
 ### What is deferred execution?
 Deferred execution means that the evaluation of an expression is delayed until its realized value is actually iterated over or called upon. This can be efficient in terms of memory or performance, but it can also result in unexpected behavior if used carelessly. E.g. you manipulate a list that you queried against but haven't converted back to a list with a `ToList()`.
 
@@ -17,7 +23,7 @@ Immediate execution occurs when the LINQ query is executed at the point of it's 
 A lambda expression is an ***anonymous function*** used to create ***delegates*** or ***expression tree*** types. In LINQ, they are often used to write inline expressions defining ***criteria*** or ***projections***.
 
 ### What are expression trees?
-Expression trees represent code in a tree-like data structure, where each node is an expression, such as a method call or a binary operation. LINQ uses expression trees to translate queries against data sources like SQL into domain-specific language.
+Expression trees represent code in a tree-like data structure, where each node is an expression, such as a method call or a binary operation. They are important in LINQ because they enable LINQ providers to interpret the queries and translate them into other forms (like SQL for databases) dynamically at runtime.
 
 ### What is the difference between `FirstOrDefault()` and `SingleOrDefault()`?
 Both methods return a single element from a sequence. `FirstOrDefault()` returns the first found element or default if no element is found. `SingleOrDefault()` ***throws if there is more than one element*** in the sequence, otherwise, it returns the single element or default.
