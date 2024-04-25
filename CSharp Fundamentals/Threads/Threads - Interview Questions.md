@@ -2,8 +2,10 @@ Let’s tackle the **Async Development** questions with brief answers to deepen 
 
 ### **What is asynchronous programming in .NET?**
 Asynchronous programming allows for certain operations, typically I/O-bound like network requests or file reads, to run without blocking the execution thread. This enhances application responsiveness and scalability.
+
 ### **How do `async` and `await` keywords facilitate asynchronous programming in C#?**
 `async` marks a method that performs asynchronous operations and returns a `Task` or `Task<T>`. `await` is used before a method that returns a `Task`, indicating the method should run asynchronously, and the execution can continue past this method without waiting for it to complete.
+
 ### **What are the benefits of using asynchronous methods?**
 Benefits include improved application performance and responsiveness, reduced resource consumption on the server side, and the ability to handle more operations with fewer threads in a scalable way.
 
@@ -104,6 +106,7 @@ class DeadlockExample
     }
 }
 ```
+
 ### Explanation:
 - **Thread 1** starts and acquires `lockA`. It then sleeps for 1 second, simulating some work but holding on to `lockA`.
 - **Thread 2** starts almost simultaneously and acquires `lockB`. It then also sleeps for 1 second.
@@ -111,6 +114,7 @@ class DeadlockExample
 - Simultaneously, **Thread 2** tries to acquire `lockA` to proceed, but **Thread 1** holds `lockA`.
 
 Neither thread can proceed because each is waiting for the other to release the lock they need. This situation is a classic deadlock.
+
 ### How to Avoid Deadlocks
 Avoiding deadlocks involves careful design to ensure that threads do not enter into a waiting cycle. Here are a few strategies:
 1. **Lock Ordering**: Always acquire locks in a consistent global order.

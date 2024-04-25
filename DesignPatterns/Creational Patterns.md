@@ -15,11 +15,11 @@ Creational patterns are focused towards how to ***instantiate*** an object or gr
 Simple factory simply ***generates an instance*** for client ***without exposing*** any instantiation ***logic*** to the client.
 
 The Simple Factory pattern describes ***a class that has one creation method*** with a large conditional that based on method parameters chooses which product class to instantiate and then return.
+
 ### When to use?
 The Simple Factory pattern is useful when creating objects that share a common interface but differ in some details, and you want to abstract the logic that decides which specific class to instantiate.
 
 ### Example
-
 ```CSharp
 public static IUser Create(string type)
     {
@@ -41,6 +41,7 @@ The Factory Method is a creational design pattern that ***provides an interface 
 
 In other words:
 It provides a way to delegate the instantiation logic to child classes.
+
 ### Example
 ```CSharp
 public abstract class Department
@@ -72,12 +73,15 @@ public class AccountingDepartment : Department
 }
 
 ```
+
 ### When to use?
 Useful when there is some generic processing in a class but the required sub-class is dynamically decided at runtime. Or putting it in other words, when the client doesn’t know what exact sub-class it might need.
+
 ## Abstract Factory
 A factory of factories; a factory that groups the individual but related/dependent factories together without specifying their concrete classes.
 
 ### Example
+
 #### Interfaces
 
 ```Csharp
@@ -100,6 +104,7 @@ public interface IDoorFactory
     IDoorFittingExpert MakeFittingExpert();
 }
 ```
+
 #### Concrete classes
 
 ```CSharp
@@ -167,8 +172,8 @@ public class IronDoorFactory : IDoorFactory
     }
 }
 ```
-#### Usage
 
+#### Usage
 ```CSharp
 // Using the Wooden Door Factory
 IDoorFactory woodenFactory = new WoodenDoorFactory();
@@ -186,6 +191,7 @@ expert = ironFactory.MakeFittingExpert();
 door.GetDescription();  // Output: I am an iron door
 expert.GetDescription(); // Output: I can only fit iron doors
 ```
+
 ## Builder
 https://refactoring.guru/design-patterns/builder
 Builder lets you construct complex objects step by step. The pattern allows you to produce different types and representations of an object using the same construction code.
@@ -195,7 +201,6 @@ In some cases you might want to avoid creating a subclass for variations of the 
 ![](../Media/Pasted%20image%2020240421180716.png)
  ![](../Media/Pasted%20image%2020240421184959.png)
 
-
 ### The Solution
 The Builder pattern lets you construct complex objects ***step by step***. The Builder doesn’t allow other objects to access the product while it’s being built.
 
@@ -204,8 +209,8 @@ Some of the steps might need different implementations when you need various ver
 You can extract the series of step calls into a separate ***Director*** class that defines the order in which to call the steps.
 
 ![](../Media/Pasted%20image%2020240421185836.png)
-### When to use?
 
+### When to use?
 When there could be several flavors of an object and to avoid the constructor telescoping. The key difference from the factory pattern is that; factory pattern is to be used when the creation is a one step process while builder pattern is to be used when the creation is a multi step process.
 
 ## Prototype
@@ -221,6 +226,7 @@ Implementation details: https://refactoring.guru/design-patterns/prototype
 
 ### Cons
 Cloning complex objects that have circular references might be very tricky.
+
 ## Singleton
 https://refactoring.guru/design-patterns/singleton
 The pattern ensures that only one instance of a particular class is ever created.
@@ -229,6 +235,7 @@ Could be useful when you want to control access to a shared resource.
 ### Requirements
 1. Ensure that the class can have only one instance.
 1. Provide a global access point to the instance from anywhere in the program. It also protects it from being overwritten.
+
 ### Cons
 - creates a global state of your app: a change in one place can affect another part of the application
 	- bugs introduced by this are hard to find
@@ -266,5 +273,6 @@ public sealed class President
 3. **Thread Safety**: The use of a lock (`padlock`) ensures that the instance is thread-safe and handles multi-threaded scenarios safely. However, in this particular case since the instance is already initialized statically, the lock is not necessarily required for instance creation but might be useful if later modification or operations need to be thread-safe.
 4. **No Need for Clone or Deserialize Prevention**: Unlike PHP, in C#, if you do not provide cloning (ICloneable interface) or serialization capabilities, the class won't be cloneable or serializable.
 ## Also mentioning
+
 ### Creation method / Factory method
 The creation method is just a wrapper around a constructor call.

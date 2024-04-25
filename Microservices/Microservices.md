@@ -16,6 +16,7 @@
 5. Deploy Independently
 6. Failure Isolation
 7.  Highly Observable: logging events and stats
+
 ## Disadvantages of Microservices
 - Additional complexity introduced by inter-process communication mechanisms between services.
 - Difficult to create a consistent testing environment involving all services.
