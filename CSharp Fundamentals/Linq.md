@@ -25,6 +25,9 @@ A lambda expression is an ***anonymous function*** used to create ***delegates**
 ### What are expression trees?
 Expression trees represent code in a tree-like data structure, where each node is an expression, such as a method call or a binary operation. They are important in LINQ because they enable LINQ providers to interpret the queries and translate them into other forms (like SQL for databases) dynamically at runtime.
 
+### How are expression trees used in `IQueryable`?
+In `IQueryable`, LINQ operators create expression trees rather than executing the operation directly. These trees are passed to the LINQ provider, which can translate the tree into the necessary query language for execution by the underlying data source.
+
 ### What is the difference between `FirstOrDefault()` and `SingleOrDefault()`?
 Both methods return a single element from a sequence. `FirstOrDefault()` returns the first found element or default if no element is found. `SingleOrDefault()` ***throws if there is more than one element*** in the sequence, otherwise, it returns the single element or default.
 
@@ -55,5 +58,41 @@ Extension methods allow adding new methods to existing types without modifying t
 ### What is method syntax and query syntax in LINQ?
 **Answer:** Method syntax (also known as fluent) uses extension methods included in the `System.Linq` namespace, while query syntax is more like SQL and uses query expressions.
 
+### What are LINQ providers?
+LINQ providers are components in .NET that enable LINQ to interact with various data sources by performing several key functions:
 
+1. **Translation**: They convert LINQ queries written in C# into the native query language of the data source, such as SQL for databases or XPath for XML.
+2. **Execution**: Providers handle the execution of these translated queries against the actual data source.
+3. **Materialization**: After execution, providers convert the raw results back into .NET objects or primitives that can be used within the application.
+4. **Optimization**: They optimize queries to leverage specific features and efficiencies of the data sources.
+5. **Abstraction**: LINQ providers abstract away the complexities of directly interacting with different data sources, allowing developers to use a consistent querying interface.
+6. **Extensibility**: The framework is extensible, allowing for the creation of custom providers for new or unsupported data sources.
 
+Overall, LINQ providers simplify the process of querying different data sources by allowing developers to use uniform, strongly-typed queries across their applications.
+
+### How can you improve LINQ query performance?Y
+You can improve performance by:
+- Using compiled queries for frequently executed queries to avoid repeated query parsing.
+- Applying filters as early as possible in the query.
+- Avoiding using `Count()` or `Any()` inside loops.
+- Selecting only the required columns instead of retrieving complete entities.
+
+### What areLINQ Standard Query Operators?
+A ***set of extension methods*** forming a query pattern is known as **LINQ Standard Query Operators**. As building blocks of LINQ query expressions, these operators offer a range of query capabilities like filtering, sorting, projection, aggregation, etc.
+
+LINQ standard query operators can be categorized into the following ones on the basis of their functionality.
+
+- **Filtering Operators** (`Where`, `OfType`)
+- **Join Operators** (`Join`, `GroupJoin`)
+- **Projection Operations** (`Select`, `SelectMany`)
+- **Sorting Operators** (`OrderBy`, `ThenBy`, `Reverse`, ...)
+- **Grouping Operators** (`GroupBy`, `ToLookup`)
+- **Conversions** (`Cast`, `ToArray`, `ToList`, ...)
+- **Concatenation** (`Concat`)
+- **Aggregation** (`Aggregate`, `Average`, `Count`, `Max`, ...)
+- **Quantifier Operations** (`All`, `Any`, `Contains`)
+- **Partition Operations** (`Skip`, `SkipWhile`, `Take`, ...)
+- **Generation Operations** (`DefaultIfEmpty`, `Empty`, `Range`, `Repeat`)
+- **Set Operations** (`Distinct`, `Except`, ...)
+- **Equality** (`SequenceEqual`)
+- **Element Operators** (`ElementAt`, `First`, `Last`, ...)
