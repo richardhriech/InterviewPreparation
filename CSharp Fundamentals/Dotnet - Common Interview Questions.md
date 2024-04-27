@@ -7,6 +7,8 @@
 - **Abstraction**: Abstraction focuses on what an object does instead of how it does it, providing a generic view of an object. Abstraction can be achieved with interfaces and abstract classes.
 - **Encapsulation**: Involves bundling the data (attributes) and methods that operate on the data into a single unit or class. It also restricts direct access to some of an object's components, which can prevent the accidental modification of data.
 
+### [SOLID Principles](SOLID.md)
+
 ### What are Compile-time Polymorphism and Runtime Polymorphism?
 
 #### Compile-time Polymorphism
@@ -18,15 +20,6 @@ Compile-time polymorphism, also known as **static polymorphism**, is achieved th
 Runtime polymorphism, also known as **dynamic polymorphism**, is implemented by method overriding which is a feature that allows a subclass to provide a specific implementation of a method that is already defined in its superclass. This type of polymorphism is determined at runtime.
 - Method overriding occurs when a subclass has a method with the same name, return type, and parameters as a method in its parent class.
 - To use method overriding, the base class method must be declared with the `virtual` keyword, and the derived class method must be declared with the `override` keyword.
-
-### What are the SOLID Principles?
-- **Single Responsibility Principle (SRP)**: Each class should have one and only one reason to change, meaning it should have only one job or responsibility.
-- **Open/Closed Principle (OCP)**: Software entities should be open for extension, but closed for modification. This means you can add new features via extensions without changing existing code.
-- **Liskov Substitution Principle (LSP)**: Objects of a superclass shall be replaceable with objects of its subclasses without affecting the functionality of the program. This defines rules for a good inheritance structure.
-- **Interface Segregation Principle (ISP)**: Larger interfaces should be split into smaller ones. By doing so, a class will only have to know about the methods that are of interest to them.
-- **Dependency Inversion Principle (DIP)**: 
-1. High-level modules should not depend on low-level modules. Both should depend on abstractions (e.g., interfaces or abstract classes).
-2. Abstractions should not depend on details. Details (concrete implementations) should depend on abstractions.
 
 ## `C#`
 
